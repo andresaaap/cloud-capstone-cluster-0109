@@ -46,7 +46,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-1', credentials:'aws-static') {
 					sh '''
-						aws eks --region us-east-1 update-kubeconfig --name prodalvima2
+						aws eks --region us-east-1 update-kubeconfig --name bluecluster0109
 					'''
 				}
 			}
@@ -56,7 +56,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-1', credentials:'aws-static') {
 					sh '''
-						aws eks --region us-east-1 update-kubeconfig --name prodalvimagreen
+						aws eks --region us-east-1 update-kubeconfig --name greencluster0109
 					'''
 				}
 			}

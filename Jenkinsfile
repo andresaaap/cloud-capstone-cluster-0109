@@ -5,6 +5,7 @@ pipeline {
 			steps {
 
 				sh '''
+					aws configure list
 					eksctl create cluster \
 					--name bluecluster0109 \
 					--version 1.13 \
@@ -13,7 +14,8 @@ pipeline {
 					--nodes 1 \
 					--nodes-min 1 \
 					--nodes-max 4 \
-					--node-ami auto
+					--node-ami auto \
+					--region us-east-1
 				'''
 				
 			}
@@ -31,7 +33,8 @@ pipeline {
 						--nodes 1 \
 						--nodes-min 1 \
 						--nodes-max 4 \
-						--node-ami auto
+						--node-ami auto \
+						--region us-east-1
 					'''
 				
 			}
